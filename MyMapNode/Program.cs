@@ -10,26 +10,43 @@ namespace MyMapNode
     {
         static void Main(string[] args)
         {
-             //1.The hash variable is declared as a MyMapNode<string, string> object.
-             //2.The hash object is initialized with a size of 5.
-             //3.The Add method is used to add the key / value pairs to the hash.
-            MyMapNode<string, string> hash = new MyMapNode<string, string>(5);
-            hash.Add("0", "To ");
-            hash.Add("1", "be ");
-            hash.Add("2", "or ");
-            hash.Add("3", "not ");
-            hash.Add("4", "to ");
-            hash.Add("5", "be");
+            MyMapNode<string, string> hash = new MyMapNode<string, string>(20);
+            Console.WriteLine(hash.IsEmpty());
+            hash.Add("0", "Paranoids");
+            hash.Add("1", "are");
+            hash.Add("2", "not");
+            hash.Add("3", "paranoid");
+            hash.Add("4", "because");
+            hash.Add("5", "they");
+            hash.Add("6", "are");
+            hash.Add("7", "paranoid");
+            hash.Add("8", "but");
+            hash.Add("9", "they");
+            hash.Add("10", "keep");
+            hash.Add("11", "putting");
+            hash.Add("12", "themselves");
+            hash.Add("13", "deliberately");
+            hash.Add("14", "into");
+            hash.Add("15", "paranoid");
+            hash.Add("16", "avoidable");
+            hash.Add("17", "situations");
+            Console.WriteLine(hash.GetV("5"));
+            Console.WriteLine(hash.GetV("0"));
+            Console.WriteLine($"size is: {hash.Getsize()}");
 
-            //It prints out the values of the keys 0, 1, 2, 3, 4, and 5.
-
-            Console.Write(hash.GetV("0"));
-            Console.Write(hash.GetV("1"));
-            Console.Write(hash.GetV("2"));
-            Console.Write(hash.GetV("3"));
-            Console.Write(hash.GetV("4"));
-            Console.Write(hash.GetV("5"));
+            string output = hash.GetV("3");
+            int count = 0;
+            for (int i = 0; i < hash.Getsize(); i++)
+            {
+                string temp = hash.GetV($"{i}");
+                if (output == temp)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine($"frequency of {output} is : {count}");
             Console.ReadLine();
         }
     }
 }
+    

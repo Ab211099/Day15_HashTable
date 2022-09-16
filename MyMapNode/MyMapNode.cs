@@ -76,32 +76,19 @@ namespace MyMapNode
             KeyValue<K, V> item = new KeyValue<K, V>() { Key = key, Value = value };
             linkedlist.AddLast(item);
         }
+        public bool IsEmpty()
+        {
+            if (Getsize() <= 0)
+                return true;
+            else
+                return false;
+        }
+        public int Getsize()
+        {
+            return size;
+        }
 
-//1. The method takes a key as a parameter.
-//2. It then gets the array position of the key.
-//3. It then gets the linked list at that position.
-//4. It then iterates through the linked list and checks if the key is found.
-//5. If the key is found, it removes the item from the linked list.
-//6. If the key is not found, it does nothing.
-        //public void Remove(K key)
-        //{
-        //    int pos = GetArrayPosition(key);
-        //    LinkedList<KeyValue<K, V>> linkedlist = GetLinkedList(pos);
-        //    bool isFound = false;
-        //    KeyValue<K, V> foundItem = default(KeyValue<K, V>);
-        //    foreach (KeyValue<K, V> item in linkedlist)
-        //    {
-        //        if (item.Key.Equals(key))
-        //        {
-        //            isFound = true;
-        //            foundItem = item;
-        //        }
-        //        if (isFound == true)
-        //        {
-        //            linkedlist.Remove(foundItem);
-        //        }
-        //    }
-        //}
+
     }
 
 
